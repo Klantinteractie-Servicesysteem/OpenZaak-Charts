@@ -25,7 +25,7 @@ data:
 
   default.conf: |
     server {
-      listen       8080 default_server;
+      listen       80 default_server;
       server_name  {{ .Values.settings.allowedHosts  | replace "," " "}} localhost};
       server_tokens off;
 

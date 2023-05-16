@@ -147,16 +147,16 @@ spec:
           imagePullPolicy: {{ .Values.nginx.image.pullPolicy }}
           ports:
             - name: http
-              containerPort: 8080
+              containerPort: 80
           livenessProbe:
             httpGet:
               path: /_health/
-              port: 8080
+              port: 80
             {{- toYaml .Values.nginx.livenessProbe | nindent 12 }}
           readinessProbe:
             httpGet:
               path: /
-              port: 8080
+              port: 80
             {{- toYaml .Values.nginx.readinessProbe | nindent 12 }}
           resources:
             {{- toYaml .Values.nginx.resources | nindent 12 }}
